@@ -13,7 +13,7 @@ export class AppComponent {
 
 
   // displayedColumns = ['financialYear', 'quarterName', ];
-  displayedColumns = ['financialYear', 'quarterName', 'district', 'proposedYear','suggestedUnit'];
+  displayedColumns = ['financialYear', 'quarterName', 'district', 'proposedYear','suggestedUnit','action'];
   // instituteType: 'string', proposedYear: 'string', suggestedUnit:
   spans = [];
 
@@ -30,7 +30,12 @@ export class AppComponent {
   ngOnInit(){
    
   }
-
+add(i){
+  console.log(i)
+  console.log(this.getRowSpan('quarterName', i))
+  console.log("this.dataSource",this.dataSource)
+  // originalData2.findIndex(x => ())
+}
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
@@ -79,21 +84,35 @@ export interface PeriodicElement {
 
 const originalData2 = [
   {
-    id: 1, financialYear: 1945, quarterName: 'string', 
+   financialYear: 1945, quarterName: 'string', 
     child:[
             {district: 1, instituteType: 'string', proposedYear: 'string', suggestedUnit: 0},
             {district: 1, instituteType: 'string', proposedYear: 'string', suggestedUnit: 0}
           ]
   },
   {
-    id: 2, financialYear: 1945, quarterName: 'string', 
+     financialYear: 1945, quarterName: 'string', 
     child:[
             {district: 2, instituteType: 'string', proposedYear: 'string', suggestedUnit: 0},
             {district: 2, instituteType: 'string', proposedYear: 'string', suggestedUnit: 0}
           ]
   },
   {
-    id: 3, financialYear: 1946, quarterName: 'string2', 
+    financialYear: 1946, quarterName: 'string2', 
+    child:[
+            {district: 3, instituteType: 'string', proposedYear: 'string', suggestedUnit: 0},
+            {district: 3, instituteType: 'string', proposedYear: 'string', suggestedUnit: 0}
+          ]
+  },
+  {
+    financialYear: 1947, quarterName: 'string3', 
+    child:[
+            {district: 3, instituteType: 'string', proposedYear: 'string', suggestedUnit: 0},
+            {district: 3, instituteType: 'string', proposedYear: 'string', suggestedUnit: 0}
+          ]
+  },
+  {
+    financialYear: 1946, quarterName: 'string2', 
     child:[
             {district: 3, instituteType: 'string', proposedYear: 'string', suggestedUnit: 0},
             {district: 3, instituteType: 'string', proposedYear: 'string', suggestedUnit: 0}
