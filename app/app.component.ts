@@ -8,7 +8,7 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
 })
 export class AppComponent {
   dataSource = new MatTableDataSource<any>(ELEMENT_DATA);
-  // displayedColumns = ['financialYear', 'quarterName', ];
+  
   displayedColumns = [
     'financialYear',
     'quarterName',
@@ -17,7 +17,7 @@ export class AppComponent {
     'suggestedUnit',
     'action',
   ];
-  // instituteType: 'string', proposedYear: 'string', suggestedUnit:
+  
   spans = [];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
